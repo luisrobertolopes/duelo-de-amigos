@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Duelo em Bolinhas - Arena de Poder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="top">
+        <div class="title">
+        </div>
+        <div class="controls">
+          <div id="playerInputs" class="control-row">
+            <label>P1 <input class="player-name" type="text" value="Rubi" /></label>
+            <label>P2 <input class="player-name" type="text" value="Safira" /></label>
+          </div>
+          <div class="control-row buttons">
+            <button id="addPlayerBtn" class="ghost">+ Jogador</button>
+            <button id="startBtn">Iniciar Duelo</button>
+            <button id="resetBtn" class="ghost">Resetar</button>
+          </div>
+        </div>
+      </header>
+
+      <section class="game">
+        <div id="hud-left" class="hud-container"></div>
+        
+        <div class="arena-wrapper">
+          <canvas id="arena"></canvas>
+          <div class="banner" id="banner">LUTEM!</div>
+        </div>
+
+        <div id="hud-right" class="hud-container"></div>
+      </section>
+      
+      <div class="legend">
+        <span><b style="color: #ff6b6b">■</b> ATK</span>
+        <span><b style="color: #4ecdc4">■</b> VEL</span>
+        <span><b style="color: #7bd389">■</b> VIDA</span>
+        <span><b style="color: #f7b32b">■</b> DEF</span>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

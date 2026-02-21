@@ -1,0 +1,104 @@
+:root {
+  --bg: #f1f7f4;
+  --ink: #20312c;
+  --accent: #ff6b6b;
+  --panel: #ffffff;
+  --border: #b8d2c4;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  gap: 15px;
+}
+
+.top {
+  background: var(--panel);
+  border: 2px solid var(--border);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.controls { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.control-row { display: flex; gap: 12px; }
+.control-row label { font-size: 11px; font-weight: bold; display: flex; flex-direction: column; }
+
+input { border: 1px solid var(--border); padding: 8px; border-radius: 8px; width: 110px; }
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+button:hover { transform: translateY(-2px); }
+button.ghost { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+
+.game {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 20px;
+  align-items: center;
+}
+
+.arena-wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  border: 10px solid var(--border);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+canvas { width: 100%; height: 100%; display: block; }
+
+.hud-container { display: flex; flex-direction: column; gap: 15px; }
+
+.fighter-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  transition: opacity 0.5s;
+}
+
+.name { font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid #eee; }
+.bar { height: 10px; background: #eee; border-radius: 5px; overflow: hidden; margin-bottom: 5px; }
+.fill { height: 100%; width: 100%; background: #ff6b6b; transition: width 0.3s ease-out; }
+.stats-text { font-size: 11px; font-weight: bold; display: flex; justify-content: space-between; color: #666; }
+
+.legend { text-align: center; margin-top: 10px; font-weight: bold; display: flex; justify-content: center; gap: 20px; }
+
+.banner {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 15px 40px;
+  border-radius: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.banner.show { opacity: 1; }
